@@ -1,0 +1,48 @@
+a:hover{
+    text-decoration: none;
+}
+.bg_title{
+    background-color: #CFCDCD;
+}
+.w_10pc{
+    width: 10%;
+}
+.w_12pc{
+    width: 12%;
+}
+.w_15pc{
+    width: 15%;
+}
+.w_17pc{
+    width: 17%;
+}
+.w_35pc{
+    width: 35%;
+}
+.w_40pc{
+    width: 40%;
+}
+.row{
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    padding: 0px;
+    margin: 0px;
+}
+.container-fluid{
+    padding: 0px;
+    margin: 0px;
+}
+.ml_10pc{
+    margin-left: 10%;
+}
+.ml_15pc{
+    margin-left: 15%;
+}
+.ml_25pc{
+    margin-left: 25%;
+}
+.ml_35pc{
+    margin-left: 35%;
+}

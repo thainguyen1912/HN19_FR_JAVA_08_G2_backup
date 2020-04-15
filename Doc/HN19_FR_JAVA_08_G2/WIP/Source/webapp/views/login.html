@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="../web-resources/css/login.css" type="text/css">
+
+    <link rel="shortcut icon" type="image/jpg" href="/imgs/icon-login.png" />
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+		<nav class="navbar navbar-expand-lg" >
+			<img src="../web-resources/picture/logo_white.svg" width="150px" />
+			<h4>FSOFT HR UNTILTIES</h4>
+		</nav>
+
+
+        <div class="content-body">
+            <div class="row row-content">
+                <div class="content-left col-lg-2" id="content-left">
+                    <a href="#" id="event-nav"><i class="fas fa-angle-double-left"></i></a>
+                    <a href="#" id="nav-event" class="hidden-a"><i class="fas fa-angle-double-right"></i></a>
+                </div>
+
+                <div class="content-right col-lg-10" id="content-right">
+                    <h3>Login</h3>
+                    <hr>
+
+                    <div class="row main-content">
+                        <div class="form-login col-lg-4 col-md-4 col-sm-4">
+                            <form action="#" id="loginForm" method="POST">
+                                <div class="row form-group-inline">
+                                    <div class="col-sm-3 col-md-3 col-lg-3">
+                                        <label for="my-input" class="form-check-label">Username</label>
+                                    </div>
+
+                                    <div class="col-sm-9 col-md-9 col-lg-9">
+                                        <input type="text" name="username" id="username" class="form-control" placeholder="Enter username">
+                                    </div>
+                                </div>
+                                <div class="row form-group-inline">
+                                    <div class="col-sm-3 col-md-3 col-lg-3">
+                                        <label for="my-input" class="form-check-label">Password</label>
+                                    </div>
+
+                                    <div class="col-sm-9 col-md-9 col-lg-9">
+                                        <input type="password" name="password" id="password" class="form-control" placeholder="Enter password">
+                                    </div>
+                                </div>
+
+                                <div class="row form-group-inline">
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <button type="submit" class="form-control btn-login" name="btn-login" id="btn-login">Login</button>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <button type="reset" class="form-control btn-reset" name="btn-reset" id="btn-reset">Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="content-fixed col-lg-6 col-md-6 col-sm-6">
+                            <span><b>Welcome to F-soft HR Utility</b></span>
+                            <p>This tool is developed to help Employees. Project Managers, BJ Managers, FSU Leads, HR (SSC, BP Manager), CTC ,FWA, QA,... in submiting HR related informations, approving the submitted info, monitoring status of your submissions...and
+                                further more
+                            </p><br/>
+                            <p>------------------------------------------------------------------------</p><br/>
+                            <p>The recommended web browser is Google Chrome Sorry for any inconvenience!!!</p>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row form-group-inline footer">
+                    <a href="#" class="a1"><i class="far fa-question-circle"></i> Help</a>
+                    <a href="#" class="a2"><i class="fas fa-address-card"></i> Create ticket on FI2.0</a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="../web-resources/js/login.js"></script>
+</body>
+
+</html>

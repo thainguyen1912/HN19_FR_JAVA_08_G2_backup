@@ -1,0 +1,168 @@
+$(document).ready(function () {
+
+	$(".custom-file-input").on("change", function () {
+		var fileName = $(this).val().split("\\").pop();
+		$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+	});
+	
+    $("#button-search").click(function (e) {
+        var searchType = document.getElementById("search-type").value;
+        var inputSearch = document.getElementById("input-search").value;
+        if (searchType == "none") alert("Please choose search type!");
+        else {
+            if (inputSearch.trim() == "") alert("Please input text to search!");
+            else {
+                $("#ajax-content").html("Loading...");
+                $.ajax({
+                    type: "post",
+                    data: {
+                        searchType: searchType,
+                        inputSearch: inputSearch
+                    },
+                    dataType: "html",
+                    url: "/JSFW.L.A101_AIPO/SearchUser/Process",
+                    success: function (data) {
+                        setTimeout(() => {
+                            $("#ajax-content").html(data);
+                        }, 500);
+                    }
+                });
+            }
+        }
+    });
+    
+    $("#formAddUser").validate({ 
+    	errorClass: "errorMessage",
+        rules: {
+            userName: {
+                required: true
+            },
+            password: {
+                required: true
+            },
+            rePassword: {
+                required: true,
+                equalTo: "#password"
+            },
+            firstName: {
+                required: true
+            },
+            lastName: {
+                required: true
+            }
+        },
+        messages:{
+            userName: {
+                required: "Please input your user name"
+            },
+            password: {
+                required: "Please input your password"
+            },
+            rePassword: {
+                required: "Please input your re-password",
+                equalTo: "re-password must be same password"
+            },
+            firstName: {
+                required: "Please input your first name"
+            },
+            lastName: {
+                required: "Please input your last name"
+            }
+        },
+        submitHandler: function (form, event) {
+        	event.preventDefault();
+        	var form = $('#formAddUser')[0];
+        	var data = new FormData(form);
+        	
+        	
+        	var listDept = [];
+            $("#department option").each(function () {
+                listDept.push(
+                    $(this).val()
+                );
+            });
+        	data.append("departments", listDept);
+        	
+        	console.log(listDept);
+        	console.log(data);
+        	console.log(data.get("departmentlist"));
+        	
+        	
+	        $("#ajax-content").html("Loading...");
+	        $.ajax({
+	            type: "post",
+	            data: data,
+	            processData: false,
+	            contentType: false,
+	            enctype: "multipart/form-data",
+	            url: "/JSFW.L.A101_AIPO/AddUser/Process",
+	            success: function (data) {
+	            		$("#ajax-content").html(data);
+	            		$( "div" ).removeClass( "modal-backdrop show in" );
+	            		$( "body" ).removeClass( "modal-open" );
+	            	}
+	        	});
+        }
+    });
+    
+    $(".pageSelected").click(function() {
+    	var number=$(this).val();
+        $("#ajax-content").html("Loading...");
+        $.ajax({
+            type: "get",
+            data: {
+            	pageIndex: number-1
+            },
+            dataType: "html",
+            url: "/JSFW.L.A101_AIPO/SearchUser/ViewPage",
+            success: function(data) {
+                setTimeout(() => {
+                    $("#ajax-content").html(data);
+                }, 500);
+            }
+        });
+
+    });
+
+})
+
+function deleteDepartment() {
+	var department = document.getElementById("department");
+	var value = department.options[department.selectedIndex].value;
+	var text = department.options[department.selectedIndex].text;
+	department.remove(department.selectedIndex);
+	
+	var departmentlist = document.getElementById("departmentlist");
+	var option = document.createElement("option");
+		option.text = text;
+		option.value = value;
+		departmentlist.add(option);
+	}
+	
+function addDepartment() {
+	var departmentlist = document.getElementById("departmentlist");
+	var value = departmentlist.options[departmentlist.selectedIndex].value;
+	var text = departmentlist.options[departmentlist.selectedIndex].text;
+	departmentlist.remove(departmentlist.selectedIndex);
+	
+	var department = document.getElementById("department");
+	var option = document.createElement("option");
+		option.text = text;
+		option.value = value;
+		department.add(option);
+	}
+
+function changeCellularTelephone(value) {
+		var cellularPhone1 = document.getElementById("cellularPhone1").value;
+		var cellularPhone2 = document.getElementById("cellularPhone2").value;
+		var cellularPhone3 = document.getElementById("cellularPhone3").value;
+
+		document.getElementById("cellularPhone").value = cellularPhone1 + '-' + cellularPhone2 + '-' + cellularPhone3;
+	}
+function changeOutTelephone(value) {
+	var outTelephone1 = document.getElementById("outTelephone1").value;
+	var outTelephone2 = document.getElementById("outTelephone2").value;
+	var outTelephone3 = document.getElementById("outTelephone3").value;
+
+	document.getElementById("outTelephone").value = outTelephone1 + '-' + outTelephone2 + '-' + outTelephone3;
+}

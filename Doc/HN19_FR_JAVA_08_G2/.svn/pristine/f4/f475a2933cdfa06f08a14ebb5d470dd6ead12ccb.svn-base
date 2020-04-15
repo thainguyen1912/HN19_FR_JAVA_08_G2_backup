@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = http://10.16.102.19/git/HN19_FR_JAVA_08_G2.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

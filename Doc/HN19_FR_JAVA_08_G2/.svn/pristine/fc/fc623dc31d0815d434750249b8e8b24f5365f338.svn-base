@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+			integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+			</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js">
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+		<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+		<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+		<link rel="stylesheet" href="../web-resources/css/styles.css" />
+		<link rel="stylesheet" href="../web-resources/css/thai.css" />
+	</head>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<!-- top-menu -->
+		<nav class="navbar navbar-expand-lg" style="background-color: midnightblue;">
+			<img src="../web-resources/picture/logo_white.svg" width="150px" />
+			<h4 style="color: white;margin-left: 5%;">FSOFT HR UNTILTIES</h4>
+		</nav>
+		<!--  -->
+
+		<div class="wrapper">
+			<!-- left-menu -->
+			<nav id="sidebar" style="min-height: 90vh;">
+				<ul class="list-unstyled components" style="margin-top: 5px;">
+					<div class="mt-4 ml-3" style="color: black;">
+						<h6>Your role now is: </h6>
+					</div>
+					<div class="input-group" style="width: 90%; margin-left: 5%;">
+						<input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+						<div class="input-group-append">
+							<button type="button"
+								class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<a class="dropdown-item" href="#">Something else here</a>
+								<div role="separator" class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Separated link</a>
+							</div>
+						</div>
+					</div>
+					<div class="ml-3">
+						<li class="nav-item mt-4">
+							<h6>
+								<a href="#">
+									<i class="fas fa-circle fa-1x"></i>&emsp;Dashboard
+								</a>
+							</h6>
+						</li>
+						<li class="nav-item mt-4">
+							<h6>
+								<a href="#">
+									<i class="fas fa-circle fa-1x"></i>&emsp;Class Management
+								</a>
+							</h6>
+						</li>
+						<li class="nav-item mt-4">
+							<h6>
+								<a href="#">
+									<i class="fas fa-circle fa-1x"></i>&emsp;Candidate Management
+								</a>
+							</h6>
+						</li>
+						<li class="nav-item mt-4">
+							<h6>
+								<a href="#">
+									<i class="fas fa-circle fa-1x"></i>&emsp;Trainer Management
+								</a>
+							</h6>
+						</li>
+						<li class="nav-item mt-4">
+							<h6>
+								<a href="#">
+									<i class="fas fa-circle fa-1x"></i>&emsp;Trainee Management
+								</a>
+							</h6>
+						</li>
+						<li class="nav-item mt-4">
+							<h6>
+								<a href="#">
+									<i class="fas fa-circle fa-1x"></i>&emsp;General Setting
+								</a>
+							</h6>
+						</li>
+					</div>
+				</ul>
+			</nav>
+			<div id="content">
+				<button type="button" id="sidebarCollapse" class="navbar-btn">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+			<!--  -->
+
+			<!-- content -->
+			<div class="ml-4" style="width: 100%;">
+				<h4>Create Candidate Profile</h4>
+				<div class="mt-4 p-4" style="border: 1px solid darkgray;">
+					<ul class="nav nav-tabs">
+						<li class="nav-item">
+							<a class="nav-link active" data-toggle="tab" href="#candidate_infomation">Candidate
+								Infomation</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#result">Result</a>
+						</li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content mt-4">
+						<div class="tab-pane container active ml-0" style="min-width: 100%;" id="candidate_infomation">
+							<table class="table table-bordered">
+								<div class="p-2" style="background-color: #3399ff;">
+									<b>Personal Infomation</b>
+								</div>
+								<div class="row mb-2" style="border: 1px solid darkgray;">
+									<div class="col-2 bg_title p-2"><b>Empl ID</b></div>
+									<div class="col-2">00126792</div>
+									<div class="col-2 bg_title p-2"><b>Type</b></div>
+									<div class="col-2">Candidate</div>
+									<div class="col-2 bg_title p-2"><b>Status</b></div>
+									<div class="col-2">New</div>
+								</div>
+								<tbody>
+									<tr>
+										<td class="bg_title w_15pc">
+											<b>Apllication Date</b>
+										</td>
+										<td class="w_35pc">
+											<input class="datepicker" id="datepicker1" width="100%" />
+										</td>
+										<td class="bg_title w_15pc">
+											<b>Channel *</b>
+										</td>
+										<td class="w_35pc">
+											<div class="input-group">
+												<input type="text" class="form-control"
+													aria-label="Text input with segmented dropdown button">
+												<div class="input-group-append">
+													<button type="button"
+														class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+														data-toggle="dropdown" aria-haspopup="true"
+														aria-expanded="false">
+														<span class="sr-only">Toggle Dropdown</span>
+													</button>
+													<div class="dropdown-menu">
+														<a class="dropdown-item" href="#">Action</a>
+														<a class="dropdown-item" href="#">Another action</a>
+														<a class="dropdown-item" href="#">Something else here</a>
+														<div role="separator" class="dropdown-divider"></div>
+														<a class="dropdown-item" href="#">Separated link</a>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="bg_title w_15pc">
+											<b>Site</b>
+										</td>
+										<td class="w_35pc">
+											<div class="input-group">
+												<input type="text" class="form-control"
+													aria-label="Text input with segmented dropdown button">
+												<div class="input-group-append">
+													<button type="button"
+														class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+														data-toggle="dropdown" aria-haspopup="true"
+														aria-expanded="false">
+														<span class="sr-only">Toggle Dropdown</span>
+													</button>
+													<div class="dropdown-menu">
+														<a class="dropdown-item" href="#">Action</a>
+														<a class="dropdown-item" href="#">Another action</a>
+														<a class="dropdown-item" href="#">Something else here</a>
+														<div role="separator" class="dropdown-divider"></div>
+														<a class="dropdown-item" href="#">Separated link</a>
+													</div>
+												</div>
+											</div>
+										</td>
+										<td class="bg_title w_15pc">
+											<b>Account</b>
+										</td>
+										<td class="w_35pc bg_title">
+
+										</td>
+									</tr>
+									<tr>
+										<td class="bg_title w_15pc">
+											<b>Name *</b>
+										</td>
+										<td class="w_35pc">
+											<input type="text" class="form-control" />
+										</td>
+										<td class="bg_title w_15pc">
+											<b>Gender *</b>
+										</td>
+										<td class="w_35pc">
+											<div class="custom-control custom-radio custom-control-inline ml_10pc">
+												<input type="radio" class="custom-control-input" id="customRadio"
+													name="example" value="customEx">
+												<label class="custom-control-label" for="customRadio">Male</label>
+											</div>
+											<div class="custom-control custom-radio custom-control-inline ml_25pc">
+												<input type="radio" class="custom-control-input" id="customRadio2"
+													name="example" value="customEx">
+												<label class="custom-control-label" for="customRadio2">Female</label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="bg_title w_15pc">
+											<b>DOB *</b>
+										</td>
+										<td class="w_35pc ">
+											<input class="datepicker" id="datepicker2" width="100%" />
+										</td>
+										<td class="bg_title w_15pc">
+											<b>CV</b>
+										</td>
+										<td class="w_35pc">
+
+											<div class="custom-file">
+												<input type="file" class="custom-file-input" id="customFile">
+												<label class="custom-file-label" for="customFile">Choose
+													file</label>
+											</div>
+
+											<script>
+												// Add the following code if you want the name of the file appear on select
+												$(".custom-file-input").on("change", function () {
+													var fileName = $(this).val().split("\\").pop();
+													$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+												});
+											</script>
+										</td>
+									</tr>
+									<tr>
+										<td class="bg_title w_15pc">
+											<b>University</b>
+										</td>
+										<td class="w_35pc ">
+											<div class="input-group">
+												<input type="text" class="form-control"
+													aria-label="Text input with segmented dropdown button">
+												<div class="input-group-append">
+													<button type="button"
+														class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+														data-toggle="dropdown" aria-haspopup="true"
+														aria-expanded="false">
+														<span class="sr-only">Toggle Dropdown</span>
+													</button>
+													<div class="dropdown-menu">
+														<a class="dropdown-item" href="#">Action</a>
+														<a class="dropdown-item" href="#">Another action</a>
+														<a class="dropdown-item" href="#">Something else here</a>
+														<div role="separator" class="dropdown-divider"></div>
+														<a class="dropdown-item" href="#">Separated link</a>
+													</div>
+												</div>
+											</div>
+										</td>
+										<td class="bg_title w_15pc">
+											<b>Faculty</b>
+										</td>
+										<td class="w_35pc">
+											<div class="input-group">
+												<input type="text" class="form-control"
+													aria-label="Text input with segmented dropdown button">
+												<div class="input-group-append">
+													<button type="button"
+														class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+														data-toggle="dropdown" aria-haspopup="true"
+														aria-expanded="false">
+														<span class="sr-only">Toggle Dropdown</span>
+													</button>
+													<div class="dropdown-menu">
+														<a class="dropdown-item" href="#">Action</a>
+														<a class="dropdown-item" href="#">Another action</a>
+														<a class="dropdown-item" href="#">Something else here</a>
+														<div role="separator" class="dropdown-divider"></div>
+														<a class="dropdown-item" href="#">Separated link</a>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="bg_title w_15pc">
+											<b>Phone *</b>
+										</td>
+										<td class="w_35pc ">
+											<input type="text" class="form-control" />
+										</td>
+										<td class="bg_title w_15pc">
+											<b>Email *</b>
+										</td>
+										<td class="w_35pc">
+											<input type="text" class="form-control" />
+										</td>
+									</tr>
+									<tr>
+										<td class="bg_title w_15pc">
+											<b>Skill</b>
+										</td>
+										<td class="w_35pc ">
+											<div class="input-group">
+												<input type="text" class="form-control"
+													aria-label="Text input with segmented dropdown button">
+												<div class="input-group-append">
+													<button type="button"
+														class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+														data-toggle="dropdown" aria-haspopup="true"
+														aria-expanded="false">
+														<span class="sr-only">Toggle Dropdown</span>
+													</button>
+													<div class="dropdown-menu">
+														<a class="dropdown-item" href="#">Action</a>
+														<a class="dropdown-item" href="#">Another action</a>
+														<a class="dropdown-item" href="#">Something else here</a>
+														<div role="separator" class="dropdown-divider"></div>
+														<a class="dropdown-item" href="#">Separated link</a>
+													</div>
+												</div>
+											</div>
+										</td>
+										<td class="bg_title w_15pc">
+											<b>Graduration Year</b>
+										</td>
+										<td class="w_35pc">
+											<input class="datepicker" id="datepicker3" width="100%" />
+										</td>
+									</tr>
+									<tr>
+										<td class="bg_title w_15pc">
+											<b>Foreign Language</b>
+										</td>
+										<td class="w_35pc ">
+											<input type="text" class="form-control" />
+										</td>
+										<td class="bg_title w_15pc">
+											<b>Level</b>
+										</td>
+										<td class="w_35pc">
+											<input type="text" class="form-control" />
+										</td>
+									</tr>
+									<tr>
+										<td class="bg_title w_15pc">
+											<b>Note</b>
+										</td>
+										<td colspan="3" class="w_35pc ">
+											<input type="text" class="form-control" />
+										</td>
+									</tr>
+									<tr>
+										<td class="bg_title w_15pc">
+											<b>History</b>
+										</td>
+										<td colspan="3" class="w_35pc bg_title">
+
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<button type="button" class="btn btn-primary">
+								Submit
+							</button>
+							<button type="button" class="btn btn-outline-dark">
+								<i class="fas fa-undo-alt"></i>&nbsp;Close
+							</button>
+						</div>
+						<div class="tab-pane container fade" id="result">...</div>
+					</div>
+					<!--  -->
+				</div>
+
+			</div>
+			<!--  -->
+		</div>
+
+	</div>
+
+	<footer class="p-2" style="background-color: #ECECEC;">
+		<div class="row">
+			<div class="col-2" style="text-align: right;">
+				<a href="#"><i class="far fa-question-circle"></i>&nbsp;Help?</a>
+			</div>
+			<div class="col-10">
+				<a href="#"><i class="fas fa-clipboard-list"></i>&nbsp;Create ticket on FI2.0</a>
+			</div>
+		</div>
+	</footer>
+	<script>
+		$('#datepicker1, #datepicker2, #datepicker3').each(function () {
+			$(this).datepicker({
+				uiLibrary: 'bootstrap4'
+			});
+		});
+	</script>
+	<script type="text/javascript" src="../web-resources/js/thai.js"></script>
+</body>
+
+</html>
